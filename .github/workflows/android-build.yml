@@ -18,14 +18,14 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Install Gradle
-        run: sudo apt-get install gradle -y
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
 
-      - name: Build APK
-        run: gradle assembleDebug
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: e888-apk
+          name: E888-APK
           path: app/build/outputs/apk/debug/app-debug.apk
