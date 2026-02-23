@@ -1,2 +1,3 @@
 rootProject.name = "E888"
 include ':app'
+build trigger
